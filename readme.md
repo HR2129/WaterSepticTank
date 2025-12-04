@@ -1,135 +1,301 @@
-# Water Frontend 💧
+# 💧 Water Septic Tank Management System
 
-This project is a React-based frontend application designed for water management. It provides a user interface for managing master data (like tank types, owner types, contractors, and staff), configuring application settings, and handling various transaction-related tasks such as assigning inspections and generating bills. The application uses a modular architecture with context providers for managing authentication, language, loading state, and master data. It also includes robust error logging and validation mechanisms.
+<!-- badges -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React-blue" />
+  <img src="https://img.shields.io/badge/Backend-Node.js-green" />
+  <img src="https://img.shields.io/badge/Database-OracleDB-orange" />
+  <img src="https://img.shields.io/badge/Build-Vite-purple" />
+  <img src="https://img.shields.io/badge/License-ISC-lightgrey" />
+</p>
 
-## 🚀 Key Features
+A complete **full‑stack application** for automating septic tank operations, enabling:
+- Tank registration & citizen services  
+- Inspection → Job assignment → Cleaning execution  
+- Billing, receipts & PDF document generation  
+- Full admin management (masters, configurations, dashboards)  
 
-- **User Authentication:** Secure user authentication with JWT-based token management.
-- **Dynamic Routing:**  `react-router-dom` is used to navigate between different sections of the application.
-- **Master Data Management:** Interfaces for managing master data such as tank types, owner types, contractors, and staff.
-- **Configuration Management:** Allows administrators to configure application settings.
-- **Transaction Handling:** Enables users to perform various transaction-related tasks, such as assigning inspections, creating job assignments, and generating bills.
-- **Global Loading State:** Centralized loading state management using React Context.
-- **Language Support:**  Manages the application's current language and provides a translation function.
-- **Centralized Error Logging:** Captures and logs errors to a backend server for analysis and debugging.
-- **Form Validation:** Reusable validation schemas and input handlers for form validation.
-- **Dynamic Favicon:** Dynamically updates the favicon based on application state or user preferences.
-- **API Abstraction:** Provides a service for making API requests to the backend, including encryption and decryption of data for security.
+---
 
-## 🛠️ Tech Stack
+# 📚 Table of Contents
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [System Overview](#system-overview)
+- [Frontend Setup](#frontend-setup)
+- [Backend Setup](#backend-setup)
+- [Project Structure](#project-structure)
+- [System Flow](#system-flow)
+- [API Overview](#api-overview)
+- [Contributing](#contributing)
+- [License](#license)
 
-- **Frontend:**
-    - React
-    - React Router DOM
-    - Axios
-    - crypto-js
-    - Tailwind CSS
-    - clsx
-    - tailwind-merge
-    - Yup
-    - jwt-decode
-    - bootstrap
-- **Build Tool:**
-    - Vite
-- **Languages:**
-    - JavaScript/JSX
-    - TypeScript
-- **Other:**
-    - Node.js
-    - npm or yarn
+---
 
-## 📦 Getting Started / Setup Instructions
+# 🚀 Key Features
 
-### Prerequisites
+## 🔐 Authentication & Security
+- JWT-based Admin & Citizen authentication  
+- Protected routes (frontend + backend)  
+- Encrypted tokens using **CryptoJS**  
+- Secure file upload with **Multer**  
 
-- Node.js (>=16)
-- npm or yarn
-- A backend API server (configured with the same `API_SECRET` as the frontend)
+## 🗂️ Master Data Management
+CRUD operations for:
+- Tank Types  
+- Ownership Types  
+- Contractors  
+- Staff  
+- Rate Configurations  
 
-### Installation
+Includes:
+- Table views  
+- Search & filtering  
+- Excel/CSV export  
+- Formik + Yup validation  
 
-1.  Clone the repository:
+## ⚙️ Configuration Management
+Admins can configure:
+- Tank type rules  
+- Contractor & staff mapping  
+- System metadata  
 
-    ```bash
-    git clone <repository_url>
-    cd Water_Frontend
-    ```
+## 🔄 Transaction Processing  
+### Workflow:
+1. **Inspection Assignment**  
+2. **Job Assignment**  
+3. **Cleaning Execution** (photo upload)  
+4. **Bill Generation (PDF)**  
+5. **Receipt Collection**  
 
-2.  Install dependencies:
+## 👨‍💻 Citizen Portal Features
+- Tank registration  
+- Application tracking  
+- Bill viewing & payments  
+- Downloadable certificates & receipts  
 
-    ```bash
-    npm install # or yarn install
-    ```
+## 🌐 Multi‑Language Support
+- English  
+- Marathi  
 
-### Running Locally
+Powered by JSON translation + Context API.
 
-1.  Configure the API base URL:
+## 📊 Dashboard & Analytics
+- Dynamic department dashboards  
+- API‑powered stats  
+- Lazy-loaded submodule dashboards  
 
-    -   Update the `BASE_API_URL` constant in `Water_Frontend/apiService.js` to point to your backend API server.
-    -   Ensure the `API_SECRET` in `Water_Frontend/apiService.js` matches the backend's secret key.
-    -   Also, check the backend URL (`http://182.70.112.244:5000/log-error`) in `Water_Frontend/src/logger.jsx` and update it if necessary. Consider using environment variables for configuration.
+## 📝 Logging & Error Tracking
+- Backend: Winston logs with daily rotation  
+- Frontend: Sends error metadata to backend  
 
-2.  Start the development server:
+---
 
-    ```bash
-    npm run dev # or yarn dev
-    ```
+# 🛠️ Tech Stack
 
-    This will start the Vite development server, and you can access the application in your browser at the provided URL (usually `http://localhost:3000`).
+## 🎨 Frontend
+| Technology | Purpose |
+|-----------|----------|
+| React 19 | UI framework |
+| Vite 6 | Lightning-fast build tool |
+| React Router DOM | Routing |
+| Tailwind CSS + Bootstrap | Styling |
+| Formik + Yup | Form validation |
+| Axios | API client |
+| Radix UI | UI components |
+| jsPDF + html2canvas | PDF generation |
+| Recharts / Chart.js | Charts |
+| SweetAlert2 | Alerts |
 
-## 💻 Project Structure
+## 🖥️ Backend
+| Technology | Purpose |
+|-----------|----------|
+| Node.js + Express | API server |
+| OracleDB | Database |
+| JWT | Authentication |
+| Multer | File uploads |
+| Puppeteer | PDF creation |
+| Handlebars | Document templates |
+| Winston | Logging |
 
+---
+
+# 🧩 System Overview
+
+## Frontend Highlights
+- Admin + Citizen portals  
+- Context-driven state management  
+- Form validations  
+- Protected routing  
+- Excel/PDF export  
+
+## Backend Highlights
+- Node.js REST APIs  
+- OracleDB CRUD operations  
+- File/document storage  
+- PDF generation workflow  
+- Transaction pipelines  
+
+---
+
+# ⚛️ Frontend Setup
+
+```bash
+cd Water_Frontend
+npm install
+```
+
+Create `.env`:
+
+```
+VITE_API_URL=http://localhost:5000
+VITE_APP_NAME=Water Septic Tank Management
+```
+
+Run:
+```bash
+npm run dev
+```
+
+---
+
+# 🖥️ Backend Setup
+
+```bash
+cd Water_Backend
+npm install
+```
+
+Create `.env`:
+
+```
+DB_USER=your_user
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=1521
+DB_SERVICE_NAME=orcl
+JWT_SECRET=your_secret
+SESSION_SECRET=your_session_secret
+PORT=5000
+```
+
+Run:
+```bash
+node server.js
+```
+
+---
+
+# 📁 Project Structure
+
+## 🌐 Frontend
 ```
 Water_Frontend/
 ├── src/
 │   ├── Components/
-│   │   ├── Spinner/
-│   │   │   └── Spinner.jsx
 │   ├── Context/
-│   │   ├── AuthContext.jsx
-│   │   ├── LanguageProvider.jsx
-│   │   ├── LoaderContext.jsx
-│   │   ├── MasterDataContext.jsx
 │   ├── HOC/
-│   │   ├── ProtectedRoute.jsx
-│   │   ├── Validation/
-│   │   │   ├── InputValidations.jsx
-│   │   │   ├── Validation.jsx
-│   │   │   ├── rules.jsx
-│   ├── Pages/
-│   │   ├── ... (various page components)
 │   ├── Hooks/
-│   │   ├── useDynamicFavicon.jsx
+│   ├── Pages/
+│   ├── Translations/
+│   ├── utils/
 │   ├── lib/
-│   │   ├── utils.ts
 │   ├── App.jsx
-│   ├── index.css
 │   ├── main.jsx
-│   ├── logger.jsx
-├── apiService.js
-├── tsconfig.json
-├── vite.config.js
-├── ... (other configuration files)
+│   ├── index.css
+├── public/
+└── vite.config.js
 ```
 
-## 📸 Screenshots
+## ⚙️ Backend
+```
+Water_Backend/
+├── src/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── routes/
+│   ├── templates/
+├── uploads/
+├── generated_files/
+├── logs/
+└── server.js
+```
 
-(Add screenshots of the application here to showcase its UI and functionality)
+---
 
-## 🤝 Contributing
+# 🔄 System Flow
 
-Contributions are welcome! Please follow these steps:
+## 🔐 Authentication
+```
+User Login → Backend Validation → JWT Token → Frontend LocalStorage → Protected Route Access
+```
 
-1.  Fork the repository.
-2.  Create a new branch for your feature or bug fix.
-3.  Make your changes and commit them with descriptive messages.
-4.  Push your changes to your fork.
-5.  Submit a pull request.
+## 🗂️ Master Data Flow
+```
+Fetch Data → Display Table → CRUD → Validate → Save in OracleDB → Refresh UI
+```
 
-## 📝 License
+## 🛠️ Transaction Pipeline
+```
+Inspection → Job Assignment → Cleaning Execution → Bill PDF → Receipt
+```
 
-This project is licensed under the [MIT License](LICENSE) - see the `LICENSE` file for details.
+## 👨‍💻 Citizen Journey
+```
+Login → Dashboard → Tank Registration → Track Status → Pay Bill → Download Certificates
+```
 
-## 📬 Contact
+---
 
-If you have any questions or suggestions, feel free to contact me at dubeyrishi2002@gmail.com
+# 🧪 API Overview
+
+## 🔐 Authentication
+```
+POST /admin/login
+POST /citizen/login
+POST /logout
+```
+
+## 🗂️ Masters
+```
+GET/POST/PUT/DELETE /tank-types
+GET/POST/PUT/DELETE /contractors
+GET/POST/PUT/DELETE /staff
+GET/POST/PUT/DELETE /rate-config
+```
+
+## 🔄 Workflow
+```
+POST /assign-inspection
+POST /job-assign
+POST /cleaning-execution
+POST /bill-generation
+POST /receipt-collection
+```
+
+## 👤 Citizen
+```
+POST /citizen/register
+GET /citizen/applications
+GET /citizen/bills
+```
+
+---
+
+# 🤝 Contributing
+1. Fork the repo  
+2. Create a feature branch  
+3. Commit changes  
+4. Submit PR  
+
+---
+
+# 📝 License
+Licensed under the **ISC License**.
+
+---
+
+# 📬 Contact
+For support:  
+📧 dubeyrishi2002@gmail.com
+
