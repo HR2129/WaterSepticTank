@@ -1,0 +1,89 @@
+.text-box-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  margin: 16px 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.text-box-label {
+  font-family: "Gilroy-Medium";
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+/* -------- INPUT FIELD BOX -------- */
+.text-box-input-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1.8px solid #d1d1d1;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  transition: 0.25s ease-in-out;
+}
+
+/* Hover effect */
+.text-box-input-container:hover {
+  border-color: #3b7ddd;
+  box-shadow: 0 0 6px rgba(59, 125, 221, 0.2);
+}
+
+/* Focus effect */
+.text-box-input:focus-within,
+.text-box-input:focus {
+  outline: none;
+}
+
+.text-box-input:focus {
+  color: #000000;
+}
+
+.text-box-input-container:focus-within {
+  border-color: #2b6edc;
+  box-shadow: 0 0 8px rgba(43, 110, 220, 0.3);
+}
+
+/* -------- INPUT -------- */
+.text-box-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 17px;
+  color: #222;
+  padding: 6px 4px;
+}
+
+.text-box-input::placeholder {
+  color: #888;
+  font-size: 15px;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+  .text-box-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .text-box-label {
+    font-size: 1rem;
+  }
+
+  .text-box-input {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-box-label {
+    font-size: 0.9rem;
+  }
+
+  .text-box-input {
+    font-size: 0.85rem;
+  }
+}

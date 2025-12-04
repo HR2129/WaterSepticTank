@@ -1,0 +1,54 @@
+.citizen-dashboard-container {
+  background: linear-gradient(to bottom, #eef2f5, #f8f9fa);
+  min-height: 100vh;
+  width: 100vw; /* ✅ full viewport width */
+  overflow-x: hidden;
+}
+
+.dashboard-card {
+  background: #fff;
+  width: 100%;
+  max-width: 1700px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.dashboard-options {
+  gap: 20px;
+}
+
+.dashboard-box {
+  flex: 1 1 22%;
+  text-align: center;
+  border: 1.5px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 220px;
+  background-color: #fff;
+}
+
+.dashboard-box h6 {
+  margin-bottom: 10px;
+}
+
+.dashboard-box hr {
+  margin: 8px 0 16px;
+}
+
+.dashboard-box .btn {
+  background-color: #007bff;
+  border: none;
+  padding: 6px 18px;
+}
+
+/* Increase height of each dashboard card slightly */
+.dashboard-option-card {
+  min-height: 120px; /* ⬆️ slightly taller look */
+}
+
+/* Adjust main container card for better spacing */
+.dashboard-main-card {
+  max-width: 1400px;
+  border-radius: 10px;
+}

@@ -1,0 +1,35 @@
+.citizen-navbar {
+  background-color: #fff;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ulb-logo {
+  height: 50px;
+  width: auto;
+}
+
+.ulb-title {
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.ulb-subtitle {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Center alignment fix */
+.citizen-navbar .text-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Optional: Logout button alignment */
+.logout-btn {
+  font-size: 0.9rem;
+  padding: 6px 14px;
+}
